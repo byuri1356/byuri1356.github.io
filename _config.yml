@@ -64,7 +64,6 @@ number_of_archives: 10
 
 # pagination
 paginate: 1
-paginate_path: "/page:num/"
 
 # Build settings
 # theme: klise
