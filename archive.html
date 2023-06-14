@@ -31,9 +31,7 @@ comments: false
 {% assign end_size = 1 %}
   {% assign mid_size = 1 %}
   {% assign current =  paginator.page %}
-  {% capture current_page %}
-    <span class="page-number current">{{ current }}</span>
-  {% endcapture %}
+
   {% if paginator.previous_page %}
     <a class="extend prev" rel="prev" href="{{ paginator.previous_page_path | relative_url }}">{{ prev_text }}</a>
   {% endif %}
