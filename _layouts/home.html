@@ -13,9 +13,7 @@ home: true
 </article>
 {%- endfor -%}
 
-{% comment %} paginator(paginator, prev_text, next_text) {% endcomment %}
-{% capture paginator %}
-  {% assign end_size = 1 %}
+{% assign end_size = 1 %}
   {% assign mid_size = 1 %}
   {% assign current =  paginator.page %}
   {% capture current_page %}
@@ -83,5 +81,3 @@ home: true
   {% if current < total %}
     <a class="extend prev" rel="next" href="{{ paginator.next_page_path | relative_url }}">{{ next_text }}</a>
   {% endif %}
-{% endcapture %}
-{% assign paginator = paginator | normalize_whitespace %}
