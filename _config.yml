@@ -63,7 +63,7 @@ number_of_posts: 5
 number_of_archives: 10
 
 # pagination
-paginate: 1
+paginate: 2
 
 # Build settings
 # theme: klise
