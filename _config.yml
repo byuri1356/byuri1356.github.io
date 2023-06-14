@@ -62,6 +62,10 @@ jekyll_compose:
 number_of_posts: 5
 number_of_archives: 10
 
+# pagination
+paginate: 2
+paginate_path: "/page:num/"
+
 # Build settings
 # theme: klise
 sass:

@@ -15,7 +15,7 @@ comments: false
 
 <ul id="search-results"></ul>
 
-{%- for post in site.posts limit: site.number_of_archives -%}
+{%- for post in paginator.posts -%}
   {%- capture current_year -%}{{ post.date | date: "%Y" }}{%- endcapture -%}
   {%- unless current_year == previous_year -%}
     <h2>{{ current_year }}</h2>
@@ -27,3 +27,29 @@ comments: false
     </h3> 
   </article>
 {%- endfor -%}
+
+{% if paginator.total_pages > 1 %}  
+  	<div class="pagination">
+  {% if paginator.previous_page %}  
+    <a class="cusInnerPage" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>  
+  {% else %}  
+    <span class="cusInnerPage">&laquo; Prev</span>  
+  {% endif %}  
+  
+  {% for page in (1..paginator.total_pages) %}  
+    {% if page == paginator.page %}  
+      <em class="cusInnerPage">{{ page }}</em>  
+    {% elsif page == 1 %}  
+      <a class="cusInnerPage" href="/">{{ page }}</a>  
+    {% else %}  
+      <a class="cusInnerPage" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>  
+    {% endif %}  
+  {% endfor %}  
+  
+  {% if paginator.next_page %}  
+    <a class="cusInnerPage" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>  
+  {% else %}  
+    <span class="cusInnerPage" >Next &raquo;</span>  
+  {% endif %}  
+</div> 
+{% endif %}
