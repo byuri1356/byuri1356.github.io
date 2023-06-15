@@ -1,7 +1,7 @@
 .pagination {
     margin: 120px 0 40px;
     text-align: center;
-    border-top: 1px solid $pagination-border;
+    border-top: 1px solid #eee;
   }
   
   .page-number-basic {
@@ -19,11 +19,11 @@
     .prev, .next, .page-number {
       @extend .page-number-basic;
       border-bottom: 0;
-      border-top: 1px solid $pagination-link-border;
+      border-top: 1px solid #eee;
       transition-property: border-color;
       @include the-transition();
   
-      &:hover { border-top-color: $pagination-link-hover-border; }
+      &:hover { border-top-color: #222; }
     }
   
     .space {
@@ -36,9 +36,9 @@
     .next { margin-right: 0; }
   
     @at-root %page-number-current {
-      color: $pagination-active-color;
-      background: $pagination-active-bg;
-      border-top-color: $pagination-active-border;
+      color: white;
+      background: #ccc;
+      border-top-color: #ccc;
     }
   
     .page-number.current {
@@ -53,9 +53,9 @@
       .prev, .next, .page-number {
         margin-bottom: 10px;
         border-top: 0;
-        border-bottom: 1px solid $pagination-link-border;
+        border-bottom: 1px solid #eee;
   
-        &:hover { border-bottom-color: $pagination-link-hover-border; }
+        &:hover { border-bottom-color: #222; }
       }
     }
   }
