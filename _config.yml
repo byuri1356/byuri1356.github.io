@@ -60,10 +60,10 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : true # true, false (default)
 search                   : true # true, false (default)
-search_full_content      : # true, false (default)
+search_full_content      : false # true, false (default)
 search_provider          : lunr # lunr (default), algolia, google
 lunr:
-  search_within_pages    : true # true, false (default)
+  search_within_pages    : false  # true, false (default)
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -220,7 +220,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -286,7 +286,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      # show_date: true
+      # read_time: true
       comments: true
       share: true
       related: true
