@@ -134,12 +134,16 @@
   }
 
   img {
-    max-width: 110px;
-    border-radius: 50%;
+    // max-width: 110px;
+    // border-radius: 50%;
+    max-width: 240px;
+    height: 200px;
+    border-radius: 10%;
+    object-fit: cover;
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      // border: 1px solid $border-color;
     }
   }
 }
@@ -256,7 +260,8 @@
   }
 
   @include breakpoint($large) {
-    display: block;
+    // display: block;
+    display:flex;
     position: relative;
     margin: 0;
     padding: 0;
@@ -311,7 +316,8 @@
   a {
     display: block;
     margin-bottom: 5px;
-    padding-right: 5px;
+    // padding-right: 5px;
+    padding-right: 20px;
     padding-top: 2px;
     padding-bottom: 2px;
     color: inherit;
