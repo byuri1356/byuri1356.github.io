@@ -1,0 +1,27 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $mine-shaft;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Watford Regular";
+}
+
+.fab:before {
+  font-family: unset;
+}
+
+::selection {
+  background-color: #000;
+  color: $white;
+}
+
+img {
+  width: 100%;
+}

@@ -1,274 +1,209 @@
-# [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
+# jekyll-theme-collider
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
-[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/)
-[![Ruby gem](https://img.shields.io/gem/v/minimal-mistakes-jekyll.svg)](https://rubygems.org/gems/minimal-mistakes-jekyll)
-[![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/mmistakes)
-[![Donate to this project using Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://www.buymeacoffee.com/mmistakes)
+- [About](#about)  
+- [Installation](#installation)  
+  - [Jekyll requirements](#jekyll-requirements)
+  - [Create a local copy of the site](#create-a-local-copy-of-the-site)
+  - [Install theme using gem](#install-theme-using-gem)
+  - [Troubleshooting](#troubleshooting)
+- [Tags](#tags)  
+- [Colors](#colors)  
+  - [Page header colors](#page-header-colors)
+  - [Homepage background color](#homepage-background-color)
+- [About page customization](#about-page-customization)
+- [Customizing particles js](#customizing-particles-js)  
+- [Future projects](#future-projects)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-Minimal Mistakes is a flexible two-column Jekyll theme, perfect for building personal sites, blogs, and portfolios. As the name implies, styling is purposely minimalistic to be enhanced and customized by you :smile:.
+## About
+This theme has two main nifty features, the use of [particles.js](https://vincentgarreau.com/particles.js/) and the [jekyll-paginate-v2 plugin](https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples). For those who don't know, the jekyll-paginate-v2 plugin allows you to do cool things like paginate within a given collection, which the current jekyll-paginate gem does not allow.
 
-:sparkles: See what's new in the [CHANGELOG](CHANGELOG.md).
+I'm also using the powers of [ITCSS](https://github.com/ahmadajmi/awesome-itcss) and [BEM](http://getbem.com/introduction/) in an attempt to keep the SCSS as clean as possible. You may also notice that I'm trying to avoid the use of any libraries to keep things nice and simple. This also allows for greater learning opportunities.
 
-**If you enjoy this theme, please consider sponsoring:**
-
-[!["Buy Me A Coffee"](https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png)](https://www.buymeacoffee.com/mmistakes)
- [![Support via PayPal](https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg)](https://www.paypal.me/mmistakes)
-
-**Note:** The theme uses the [jekyll-include-cache](https://github.com/benbalter/jekyll-include-cache) plugin which will need to be installed in your `Gemfile` and must be retained in the `plugins` array of `_config.yml`. Otherwise you'll encounter `Unknown tag 'include_cached'` errors at build.
-
-[![Minimal Mistakes live preview][2]][1]
-
-[1]: https://mmistakes.github.io/minimal-mistakes/
-[2]: screenshot.png (live preview)
-
-![layout examples](screenshot-layouts.png)
-
-## Notable features
-
-- Bundled as a "theme gem" for easier installation/upgrading.
-- Compatible with GitHub Pages.
-- Support for Jekyll's built-in Sass/SCSS preprocessor.
-- Nine different skins (color variations).
-- Several responsive layout options (single, archive index, search, splash, and paginated home page).
-- Optimized for search engines with support for [Twitter Cards](https://dev.twitter.com/cards/overview) and [Open Graph](http://ogp.me/) data.
-- Optional [header images](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#headers), [custom sidebars](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#sidebars), [table of contents](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#table-of-contents), [galleries](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#gallery), related posts, [breadcrumb links](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#breadcrumb-navigation-beta), [navigation lists](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#navigation-list), and more.
-- Commenting support (powered by [Disqus](https://disqus.com/), [Facebook](https://developers.facebook.com/docs/plugins/comments), Google+, [Discourse](https://www.discourse.org/), static-based via [Staticman](https://staticman.net/), [utterances](https://utteranc.es/), and [giscus](https://giscus.app/)).
-- [Google Analytics](https://www.google.com/analytics/) support.
-- UI localized text in English (default), Arabic (عربي), Brazilian Portuguese (Português brasileiro), Catalan, Chinese, Danish, Dutch, Finnish, French (Français), German (Deutsch), Greek, Hebrew, Hindi (हिंदी), Hungarian, Indonesian, Irish (Gaeilge), Italian (Italiano), Japanese, Kiswahili, Korean, Malayalam, Myanmar (Burmese), Nepali (Nepalese), Norwegian (Norsk), Persian (فارسی), Polish, Punjabi (ਪੰਜਾਬੀ), Romanian, Russian, Slovak, Spanish (Español), Swedish, Thai, Turkish (Türkçe), and Vietnamese.
-
-## Skins (color variations)
-
-This theme comes in nine different skins (in addition to the default one).
-
-| `air` | `contrast` | `dark` |
-| --- | --- | --- |
-| [![air skin](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive-large.png) | [![contrast skin](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive-large.png) | [![dark skin](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive-large.png) |
-
-| `dirt` | `mint` | `sunrise` |
-| --- | --- | --- |
-| [![dirt skin](https://mmistakes.github.io/minimal-mistakes/assets/images/dirt-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/dirt-skin-archive-large.png) | [![mint skin](https://mmistakes.github.io/minimal-mistakes/assets/images/mint-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/mint-skin-archive-large.png) | [![sunrise skin](https://mmistakes.github.io/minimal-mistakes/assets/images/sunrise-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/sunrise-skin-archive-large.png) |
-
-| `aqua` | `neon` | `plum` |
-| --- | --- | --- |
-| [![aqua skin](https://mmistakes.github.io/minimal-mistakes/assets/images/aqua-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/aqua-skin-archive-large.png) | [![neon skin](https://mmistakes.github.io/minimal-mistakes/assets/images/neon-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/neon-skin-archive-large.png) | [![plum skin](https://mmistakes.github.io/minimal-mistakes/assets/images/plum-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/plum-skin-archive-large.png) |
-
-## Demo pages
-
-| Name                                        | Description                                           |
-| ------------------------------------------- | ----------------------------------------------------- |
-| [Post with Header Image][header-image-post] | A post with a large header image. |
-| [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
-| [Syntax Highlighting Post][syntax-post] | Post displaying highlighted code. |
-| [Post with a Gallery][gallery-post] | A post showing several images wrapped in `<figure>` elements. |
-| [Sample Collection Page][sample-collection] | Single page from a collection. |
-| [Categories Archive][categories-archive] | Posts grouped by category. |
-| [Tags Archive][tags-archive] | Posts grouped by tag. |
-
-Additional sample posts are available under [posts archive][year-archive] on the demo site. Source files for these (and the entire demo site) can be found in [`/docs`](docs).
-
-[header-image-post]: https://mmistakes.github.io/minimal-mistakes/layout-header-image-text-readability/
-[gallery-post]: https://mmistakes.github.io/minimal-mistakes/post%20formats/post-gallery/
-[html-tags-post]: https://mmistakes.github.io/minimal-mistakes/markup/markup-html-tags-and-formatting/
-[syntax-post]: https://mmistakes.github.io/minimal-mistakes/markup-syntax-highlighting/
-[sample-collection]: https://mmistakes.github.io/minimal-mistakes/recipes/chocolate-chip-cookies/
-[categories-archive]: https://mmistakes.github.io/minimal-mistakes/categories/
-[tags-archive]: https://mmistakes.github.io/minimal-mistakes/tags/
-[year-archive]: https://mmistakes.github.io/minimal-mistakes/year-archive/
+The font I'm using is a favorite of mine, Watford. Also notice the fun use of colors on tags and each page, these are easily customizable by design and is detailed below.
 
 ## Installation
+#### Jekyll requirements
+* You must have Ruby installed:
+    * https://www.ruby-lang.org/en/downloads/
+* Install Jekyll and Bundler:
+    * `gem install jekyll bundler`
 
-There are three ways to install: as a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes), as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible), or forking/directly copying all of the theme files into your project.
+#### Create a local copy of the site
+* Download this site:
+    * `git clone https://github.com/ryancolorcafe/jekyll-theme-collider.git`
+* Move into directory:
+    * `cd jekyll-theme-collider`
+* Install required gems:
+    * `bundle install`
+* Verify it's working:
+    * `bundle exec jekyll serve`
+    * Browse to http://localhost:4000
 
-### Gem-based method
+#### Install theme using gem
+* Add this line to your Gemfile:
+    * `gem "jekyll-theme-collider"`
+* Install running this command in your terminal:
+    * `bundle install`
+* Remove the default index.md and about.md files:
+    * `rm index.md about.md`
+* Download the index.md file:
+    * `curl -L -O "https://github.com/ryancolorcafe/jekyll-theme-collider/raw/master/index.md"`
+* Create the nec·essary folders:
+    * `mkdir _blog_posts _blog_tags pages tags`
+* Download pages files:
+    * `cd pages && curl -L -O "https://github.com/ryancolorcafe/jekyll-theme-collider/raw/master/pages/{about.html,blog.html,contact.html,thanks.html}"`
 
-With Gem-based themes, directories such as the `assets`, `_layouts`, `_includes`, and `_sass` are stored in the theme’s gem, hidden from your immediate view. Yet all of the necessary directories will be read and processed during Jekyll’s build process.
 
-This allows for easier installation and updating as you don't have to manage any of the theme files. To install:
+* While not necessary to download the following, you may want to in order to see an example of the use of tags, and to have enough posts to see the jekyll-paginate-v2 plugin in action. Run each command one at a time:
+  * `cd ../tags && curl -L -O "https://github.com/ryancolorcafe/jekyll-theme-collider/raw/master/tags/{nonprofit.md,painting.md}"`
 
-1. Add the following to your `Gemfile`:
+  * `cd ../_blog_tags && curl -L -O "https://github.com/ryancolorcafe/jekyll-theme-collider/raw/master/_blog_tags/{nonprofit.md,painting.md}"`
 
-   ```ruby
-   gem "minimal-mistakes-jekyll"
-   ```
+  * `cd ../_blog_posts && curl -L -O "https://github.com/ryancolorcafe/jekyll-theme-collider/raw/master/_blog_posts/{2015-08-15-transition-projects.md,2016-09-30-disjecta.md,2016-10-27-the-nature-conservancy.md,2017-09-27-nice-little-clouds.md,2017-11-10-caldera-arts.md,2018-02-10-the-nature-conservancy.md,2018-07-11-happy-little-trees.md}"`
 
-2. Fetch and update bundled gems by running the following [Bundler](http://bundler.io/) command:
+* Don't forget to go back to the root directory `cd ..`
 
-   ```bash
-   bundle
-   ```
+* Finally, add the following to config.yml:
 
-3. Set the `theme` in your project's Jekyll `_config.yml` file:
+```
+title: [Your site title here]
+email: [Your email]
+description: >
+  [Your site description]
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://jekyll-theme-collider.netlify.com"  # the base hostname & protocol for your site, e.g. http://example.com
+github_username: [Your GitHub user name]
+linked_in_profile: [LinkedIn profile url]
+full_name: [Your username]
+user_description: [Your description]
+disqus:
+  shortname: [Your Disqus shortname] # https://disqus.com
 
-   ```yaml
-   theme: minimal-mistakes-jekyll
-   ```
+theme: jekyll-theme-collider
 
-To update the theme run `bundle update`.
+plugins:
+  - jekyll-paginate-v2
 
-### Remote theme method
+collections:
+  blog_posts:
+    output: true
+    permalink: /collection/:name
+  blog_tags:
 
-Remote themes are similar to Gem-based themes, but do not require `Gemfile` changes or whitelisting making them ideal for sites hosted with GitHub Pages.
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/:num/'
+  title: ':title'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  collection: 'blog_posts'
+  trail:
+    before: 2
+    after: 2
+```
 
-To install:
+* Run your server and you should be good to go!  
+  * `bundle exec jekyll serve`
 
-1. Create/replace the contents of your `Gemfile` with the following:
+#### Troubleshooting:
+* The `curl -L -O` commands may not have fully downloaded each file. Even if it seems the file was fully downloaded, open each one to make sure that it doesn't just contain a 503 error inside. Delete the files with errors and retry the curl commands.  
+* You may need to restart your server in order for your changes to take effect.
 
-   ```ruby
-   source "https://rubygems.org"
+## Tags
 
-   gem "github-pages", group: :jekyll_plugins
-   gem "jekyll-include-cache", group: :jekyll_plugins
-   ```
+To create a new tag, make a new file in the `tags` directory with the name of the tag you'd like to use. The structure of each is the following:
 
-2. Add `jekyll-include-cache` to the `plugins` array of your `_config.yml`.
-
-3. Fetch and update bundled gems by running the following [Bundler](http://bundler.io/) command:
-
-   ```bash
-   bundle
-   ```
-
-4. Add `remote_theme: "mmistakes/minimal-mistakes@4.24.0"` to your `_config.yml` file. Remove any other `theme:` or `remote_theme:` entry.
-
-**Looking for an example?** Use the [Minimal Mistakes remote theme starter](https://github.com/mmistakes/mm-github-pages-starter/generate) for the quickest method of getting a GitHub Pages hosted site up and running. Generate a new repository from the starter, replace sample content with your own, and configure as needed.
-
-## Usage
-
-For detailed instructions on how to configure, customize, add/migrate content, and more read the [theme's documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
-
+```
 ---
+layout: blog
+title: Jekyll
+permalink: /jekyll
+color: purple
+pagination:
+  enabled: true
+  collection: all
+  tag: jekyll
+---
+
+All posts tagged with _Jekyll_
+```
+If you're familiar with Jekyll [front matter](https://jekyllrb.com/docs/front-matter/), this configuration will be intuitive. The parts unique to this theme are the color and the pagination configurations. The color configured here will determine the color of the tag page header and is based on SCSS color settings, meaning it's not just the default CSS purple color being used here. More on that in the colors section below.
+
+The pagination settings are necessary to set for the jekyll-pagination-v2 plugin. The only one you'll likely want to ever modify here is the `tag:` setting, where you simply put the tag name you'd like to use in lowercase.
+
+You'll also want to create a new file in the `_blog_tags` directory that is also named after the tag you'd like to use. This is to set the color of the actual tags themselves, and only the color needs to be set as below:
+```
+---
+color: purple
+---
+```
+In order to configure the colors as above, and make your own custom colors, see the section on colors below.
+
+## Colors
+
+If using this theme as a gem, see [overriding theme defaults](https://jekyllrb.com/docs/themes/#overriding-theme-defaults) in the Jekyll docs as you will need to make a copy of the following files.
+
+#### Page header colors
+
+To set up a new color variable in the SCSS, you may do so in `settings/_color.scss`. To create a new reusable color class that can be used for tag pages and the tags themselves, go to `elements/_colors.scss`. The structure a new color classes should look like the following:
+
+```
+.orange {
+  color: $channel-orange;
+  &.icon {
+    fill: $channel-orange;
+  }
+}
+
+.bg--orange {
+  background: $channel-orange;
+  color: $white;
+}
+
+a.bg--orange:hover {
+  background: darken($channel-orange, $darken--button);
+}
+```
+
+This is what would allow you to simply configure `color: orange` in your `tags` and `_blog_tags` directory files. For an example of what is happening under the hood, you can take a look at the `_includes/header.html` file, lines 1-15.
+
+#### Homepage background color
+
+To change the background color of the particles.js canvas on the homepage, go to `components/_particles.scss` and change the background color here:
+```
+#particles-js {
+  background: $dark-sea-green;
+}
+```
+
+## About page customization
+
+If creating a local copy of the site, simple modify the HTML and text in `_layouts/about.html`. When using the gem theme, create a new `_layouts` directory with an `about.html` file inside that use the following front matter:
+```
+---
+layout: default
+---
+```
+You may put whatever HTML and text you'd like below.
+
+## Customizing particles js
+
+To customize particles.js, such as the shape and size of the particles, you'll need to edit `assets/js/app.js`. If using the theme gem, you'll need to create this file and override with your own settings. Since this customization is outside the scope of this readme, I recommend learning more on the particles.js [GitHub page](https://github.com/VincentGarreau/particles.js/).
+
+## Future projects
+
+* A portfolio/work page using CSS Grid  
+* Search bar for articles in blog  
+* Modular scale typography  
 
 ## Contributing
 
-Found a typo in the documentation or interested in [fixing a bug](https://github.com/mmistakes/minimal-mistakes/issues)? Then by all means [submit an issue](https://github.com/mmistakes/minimal-mistakes/issues/new) or [pull request](https://help.github.com/articles/using-pull-requests/). If this is your first pull request, it may be helpful to read up on the [GitHub Flow](https://guides.github.com/introduction/flow/) first.
-
-For help with using the theme or general Jekyll support questions, please use the [Jekyll Talk forums](https://talk.jekyllrb.com/).
-
-### Pull Requests
-
-When submitting a pull request:
-
-1. Clone the repo.
-2. Create a branch off of `master` and give it a meaningful name (e.g. `my-awesome-new-feature`).
-3. Open a pull request on GitHub and describe the feature or fix.
-
-Theme documentation and demo pages can be found in the [`/docs`](docs) if submitting improvements, typo corrections, etc.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-To test the theme, run `bundle exec rake preview` and open your browser at `http://localhost:4000/test/`. This starts a Jekyll server using content in the `test/` directory. As modifications are made to the theme and test site, it will regenerate and you should see the changes in the browser after a refresh.
-
----
-
-## Credits
-
-### Creator
-
-**Michael Rose**
-
-- <https://mademistakes.com>
-- <https://twitter.com/mmistakes>
-- <https://github.com/mmistakes>
-
-### Icons + Demo Images:
-
-- [The Noun Project](https://thenounproject.com) -- Garrett Knoll, Arthur Shlain, and [tracy tam](https://thenounproject.com/tracytam)
-- [Font Awesome](http://fontawesome.io/)
-- [Unsplash](https://unsplash.com/)
-
-### Other:
-
-- [Jekyll](http://jekyllrb.com/)
-- [jQuery](http://jquery.com/)
-- [Susy](http://susy.oddbird.net/)
-- [Breakpoint](http://breakpoint-sass.com/)
-- [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/)
-- [FitVids.JS](http://fitvidsjs.com/)
-- [GreedyNav.js](https://github.com/lukejacksonn/GreedyNav)
-- [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-- [Gumshoe](https://github.com/cferdinandi/gumshoe)
-- [jQuery throttle / debounce](http://benalman.com/projects/jquery-throttle-debounce-plugin/)
-- [Lunr](http://lunrjs.com)
-
----
+Bug reports and pull requests are welcome on GitHub at https://github.com/ryancolorcafe/jekyll-theme-collider. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The MIT License (MIT)
-
-Copyright (c) 2013-2020 Michael Rose and contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-Minimal Mistakes incorporates icons from [The Noun Project](https://thenounproject.com/) 
-creators Garrett Knoll, Arthur Shlain, and tracy tam.
-Icons are distributed under Creative Commons Attribution 3.0 United States (CC BY 3.0 US).
-
-Minimal Mistakes incorporates [Font Awesome](http://fontawesome.io/),
-Copyright (c) 2017 Dave Gandy.
-Font Awesome is distributed under the terms of the [SIL OFL 1.1](http://scripts.sil.org/OFL) 
-and [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates photographs from [Unsplash](https://unsplash.com).
-
-Minimal Mistakes incorporates [Susy](http://susy.oddbird.net/),
-Copyright (c) 2017, Miriam Eric Suzanne.
-Susy is distributed under the terms of the [BSD 3-clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause).
-
-Minimal Mistakes incorporates [Breakpoint](http://breakpoint-sass.com/).
-Breakpoint is distributed under the terms of the [MIT/GPL Licenses](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [FitVids.js](https://github.com/davatron5000/FitVids.js/),
-Copyright (c) 2013 Dave Rubert and Chris Coyier.
-FitVids is distributed under the terms of the [WTFPL License](http://www.wtfpl.net/).
-
-Minimal Mistakes incorporates [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/),
-Copyright (c) 2014-2016 Dmitry Semenov, http://dimsemenov.com.
-Magnific Popup is distributed under the terms of the MIT License.
-
-Minimal Mistakes incorporates [Smooth Scroll](http://github.com/cferdinandi/smooth-scroll),
-Copyright (c) 2019 Chris Ferdinandi.
-Smooth Scroll is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [Gumshoejs](http://github.com/cferdinandi/gumshoe),
-Copyright (c) 2019 Chris Ferdinandi.
-Gumshoejs is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [jQuery throttle / debounce](http://benalman.com/projects/jquery-throttle-debounce-plugin/),
-Copyright (c) 2010 "Cowboy" Ben Alman.
-jQuery throttle / debounce is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [GreedyNav.js](https://github.com/lukejacksonn/GreedyNav),
-Copyright (c) 2015 Luke Jackson.
-GreedyNav.js is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [Jekyll Group-By-Array](https://github.com/mushishi78/jekyll-group-by-array),
-Copyright (c) 2015 Max White <mushishi78@gmail.com>.
-Jekyll Group-By-Array is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [@allejo's Pure Liquid Jekyll Table of Contents](https://allejo.io/blog/a-jekyll-toc-in-liquid-only/),
-Copyright (c) 2017 Vladimir Jimenez.
-Pure Liquid Jekyll Table of Contents is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [Lunr](http://lunrjs.com),
-Copyright (c) 2018 Oliver Nightingale.
-Lunr is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

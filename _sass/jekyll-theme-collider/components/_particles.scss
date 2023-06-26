@@ -1,0 +1,14 @@
+#particles-js {
+  background: $dark-sea-green;
+  vertical-align: bottom;
+  min-height: 95.1vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.particles-js-canvas-el {
+  width: 100% !important;
+  height: 100vh !important;
+}

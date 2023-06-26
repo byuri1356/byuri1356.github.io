@@ -1,0 +1,47 @@
+.site-title__wrapper {
+  text-align: center;
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: "Watford Medium";
+  z-index: 1;
+  pointer-events: none;
+}
+
+.site-title__text {
+  font-size: 75px;
+  display: block;
+  line-height: 1;
+  transition: font-size 0.2s;
+  padding-bottom: 0.1em;
+}
+
+.site-title__text--sub {
+  font-size: 20px;
+  margin-top: 10px;
+  transition: font-size 0.2s;
+}
+
+@media only screen and (min-width: 550px) {
+  .site-title__text {
+    font-size: 100px;
+  }
+  .site-title__text--sub {
+    font-size: 40px;
+  }
+}
+
+i {
+  pointer-events: all !important;
+  cursor: pointer;
+  padding: 0 0.15em;
+  transition: color 0.5s;
+  color: $white;
+  &:hover {
+    color: #343A40;
+  }
+}

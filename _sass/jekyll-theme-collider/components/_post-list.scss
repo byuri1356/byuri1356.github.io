@@ -1,0 +1,63 @@
+.post-list {
+  max-width: 45em;
+  padding: 1em 1em 4em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  & li {
+    list-style: none;
+  }
+  &.about {
+    padding-top: 2em;
+  }
+}
+
+.post-list__link {
+  text-decoration: none;
+  font-size: 36px;
+  transition: color 0.5s;
+  font-family: "Watford Medium";
+  &:hover {
+    color: lighten($mine-shaft, $lighten--button);
+  }
+}
+
+@media all and (max-width: 800px) {
+  .post-list__link {
+    font-size: 30px;
+  }
+}
+
+.post-list__meta {
+  display: flex;
+}
+
+.post-list__tags {
+  margin-top: 1em;
+  padding-right: 0.5em;
+}
+
+.post-list__tags a {
+  text-decoration: none;
+  transition: color 0.5s;
+  transition: background-color 0.5s;
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: $white;
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+
+.post-list__read-more {
+  transition: color 0.5s;
+  &:hover {
+    color: lighten($mine-shaft, $lighten--button);
+  }
+}
+
+.post.post-list {
+  margin-top: 2em;
+}

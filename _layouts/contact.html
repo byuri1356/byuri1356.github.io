@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="contact-form">
+  <form action="https://formspree.io/{{site.email}}" method="POST">
+    <div class="input-wrapper">
+      <label>Name</label>
+      <input type="text" name="name">
+    </div>
+    <div class="input-wrapper">
+      <label>Email</label>
+      <input type="email" name="_replyto">
+    </div>
+    <div class="input-wrapper">
+      <label>Message</label>
+      <textarea name="message" placeholder="Your message"></textarea>
+    </div>
+    <input type="hidden" name="_next" value="/thanks" />
+    <input type="submit" value="Send" class="bg--green">
+  </form>
+</div>

@@ -1,0 +1,45 @@
+.pagination {
+  padding: 3em 0 0 0;
+  text-align: center;
+  list-style: none;
+  & a {
+    text-decoration: none;
+  }
+}
+
+.pagination a {
+  display: inline-block;
+  border: 0.05em solid $jumbo-gray;
+  padding: 0.7em;
+  margin-top: 0.5em;
+  transition: color 0.5s, background-color 0.5s, font-size 0.5s, padding 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: $jumbo-gray;
+    color: $white;
+  }
+}
+
+.pagination li:hover a {
+  color: $white;
+}
+
+.selected {
+  background-color: $jumbo-gray;
+  color: $white;
+}
+
+.selected a {
+  color: $white;
+  transition: color 0.5s;
+  &:hover {
+    color: $outer-space;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .pagination li {
+    padding: 0.5em;
+    font-size: 13px;
+  }
+}

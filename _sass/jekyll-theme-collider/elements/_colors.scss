@@ -1,0 +1,127 @@
+.purple {
+  color: $purple-rain;
+  &.icon {
+    fill: $purple-rain;
+  }
+}
+
+.bg--purple {
+  background: $purple-rain;
+  color: $white;
+}
+
+a.bg--purple:hover {
+  background: darken($purple-rain, $darken--button);
+}
+
+.elixir-purple {
+  color: $elixir-purple;
+  &.icon {
+    fill: $elixir-purple;
+  }
+}
+
+.bg--elixir-purple {
+  background: $elixir-purple;
+  color: $white;
+}
+
+a.bg--elixir-purple:hover {
+  background: darken($elixir-purple, $darken--button);
+}
+
+.gray {
+  color: $jumbo-gray;
+  &.icon {
+    fill: $jumbo-gray;
+  }
+}
+
+.bg--gray {
+  background: $jumbo-gray;
+  color: $white;
+}
+
+a.bg--gray:hover {
+  background: darken($jumbo-gray, $darken--button);
+}
+
+.green {
+  color: $dark-sea-green;
+  &.icon {
+    fill: $dark-sea-green;
+  }
+}
+
+.bg--green {
+  background: $dark-sea-green;
+  color: $white;
+}
+
+a.bg--green:hover {
+  background: darken($dark-sea-green, $darken--button);
+}
+
+.pink {
+  color: $sea-pink;
+  &.icon {
+    fill: $sea-pink;
+  }
+}
+
+.bg--pink {
+  background: $sea-pink;
+  color: $white;
+}
+
+a.bg--pink:hover {
+  background: darken($sea-pink, $darken--button);
+}
+
+.orange {
+  color: $channel-orange;
+  &.icon {
+    fill: $channel-orange;
+  }
+}
+
+.bg--orange {
+  background: $channel-orange;
+  color: $white;
+}
+
+a.bg--orange:hover {
+  background: darken($channel-orange, $darken--button);
+}
+
+.bittersweet {
+  color: $bittersweet;
+  &.icon {
+    fill: $bittersweet;
+  }
+}
+
+.bg--bittersweet {
+  background: $bittersweet;
+  color: $white;
+}
+
+a.bg--bittersweet:hover {
+  background: darken($bittersweet, $darken--button);
+}
+
+.react-blue {
+  color: $react-blue;
+  &.icon {
+    fill: $react-blue;
+  }
+}
+
+.bg--react-blue {
+  background: $react-blue;
+  color: $white;
+}
+
+a.bg--react-blue:hover {
+  background: darken($react-blue, $darken--button);
+}

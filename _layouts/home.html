@@ -1,22 +1,18 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
-
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
+<div id="particles-js">
+  {% include header.html %}
+  <div class="site-title__wrapper">
+    <h1>
+      <span class="site-title__text">{{site.full_name}}</span>
+      <span class="site-title__text--sub">{{site.user_description}}</span>
+    </h1>
+    <a href="https://github.com/{{site.github_username}}" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+    <a href="{{site.linked_in_profile}}" target="_blank"><i class="fab fa-linkedin-in fa-3x"></i></a>
+  </div>
 </div>
 
-{% include paginator.html %}
+<script type="text/javascript" src="{{ base.url | prepend: site.url }}/assets/js/particles.js"></script>
+<script type="text/javascript" src="{{ base.url | prepend: site.url }}/assets/js/app.js"></script>

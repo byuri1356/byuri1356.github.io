@@ -1,0 +1,18 @@
+a {
+  color: $mine-shaft;
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: lighten($mine-shaft, $lighten--button);
+}
+
+p {
+  line-height: 1.6;
+  font-size: 19px;
+  overflow-wrap: break-word;
+}
+
+blockquote {
+  font-size: 19px;
+}
